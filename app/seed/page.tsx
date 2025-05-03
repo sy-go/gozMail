@@ -1,3 +1,10 @@
+
+
+export default function Sample(){
+  return (
+    <div>seed sample</div>
+  )
+}
 /*
 
 import bcrypt from 'bcrypt';
