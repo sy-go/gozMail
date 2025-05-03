@@ -1,6 +1,9 @@
+/*
+
 import bcrypt from 'bcrypt';
 import postgres from 'postgres';
-import { users } from '@/app/lib/placeholderData';
+
+ import { users } from '@/app/lib/placeholderData';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
@@ -27,6 +30,7 @@ async function seedUsers() {
 
   return insertedUsers;
 }
+  */
 
  /*
 async function seedCustomers() {
@@ -75,13 +79,17 @@ async function seedRevenue() {
   return insertedRevenue;
 }
 */
+
+
+/*
+
+commented out on initial set up
+
+
 export async function GET() {
   try {
     const result = await sql.begin((sql) => [
       seedUsers(),
-      //seedCustomers(),
-      //seedInvoices(),
-      //seedRevenue(),
     ]);
 
     return Response.json({ message: 'Database seeded successfully' });
@@ -89,3 +97,5 @@ export async function GET() {
     return Response.json({ error }, { status: 500 });
   }
 }
+
+*/
