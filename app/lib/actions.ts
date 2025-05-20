@@ -58,7 +58,7 @@ export async function registerUser(prevState: State, formData: FormData) {
        VALUES (${userName},${userPassword}, ${dateCreated})
        `;
 
-  } catch (error: any) {
+  } catch (error) {
     console.log(error)
 
     return {
