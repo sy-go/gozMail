@@ -9,7 +9,7 @@ import bcrypt from 'bcrypt';
 
 
 const FormSchema = z.object({
-  userEmailName: z
+  userName: z
     .string()
     .trim()
     .min(3, { message: "Username must be at least 3 characters" })
@@ -26,7 +26,7 @@ const FormSchema = z.object({
 
 export type State = {
   errors?: {
-    userEmailName?: string[];
+    userName?: string[];
     userPassword?: string[];
   };
   message?: string | null;
@@ -40,7 +40,7 @@ const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 export async function registerUser(prevState: State, formData: FormData) {
 
   const validatedFields = CreateUser.safeParse({
-    userEmailName: formData.get('userEmailName'),
+    userEmailName: formData.get('userName'),
     userPassword: formData.get('userPassword')
   })
 
@@ -51,14 +51,14 @@ export async function registerUser(prevState: State, formData: FormData) {
     };
   }
 
-  const { userEmailName, userPassword } = validatedFields.data;
-  const hashedPassword = await bcrypt.hash(userPassword, 10)
+  const { userName, userPassword } = validatedFields.data;
+  const hashedPassword = await bcrypt.hash(userPassword)
   const dateCreated = new Date();
 
   try {
     await sql`
-       INSERT INTO users ( user_email_name, user_password, date_created)
-       VALUES (${userEmailName},${hashedPassword}, ${dateCreated})
+       INSERT INTO users ( email, user_password, date_created)
+       VALUES (${userName},${hashedPassword}, ${dateCreated})
        `;
 
   } catch (error: any) {
@@ -68,7 +68,7 @@ export async function registerUser(prevState: State, formData: FormData) {
     }
   }
   revalidatePath('/register');
-  redirect('/signin')
+  redirect('/login')
 
 }
 
