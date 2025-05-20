@@ -1,0 +1,15 @@
+import Link from 'next/link';
+
+
+
+export default function Page() {
+    return (
+        <div>
+            <div className='flex'>
+                <div className='w-48  h-screen mt-1   rounded-md bg-slate-200 m-1  '>message title, date</div>
+                <div className='w-6/9  h-screen mt-1   rounded-md bg-slate-200  '>message content</div>
+            </div>
+
+        </div>
+    )
+}

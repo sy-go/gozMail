@@ -11,7 +11,7 @@ export default function Home() {
         href='/register'
         className="border rounded-md p-2 m-2">Register</Link>
         <Link 
-        href='/signin'      
+        href='/login'      
           className="border rounded-md p-2 m-2"
         >Sign in</Link>
         <div></div>
