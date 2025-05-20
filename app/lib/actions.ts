@@ -59,9 +59,10 @@ export async function registerUser(prevState: State, formData: FormData) {
        `;
 
   } catch (error: any) {
+    console.log(error)
 
     return {
-      message: 'Error, failed to register user, please try again' , error: any
+      message: 'Error, failed to register user, please try again' 
     }
   }
   revalidatePath('/register');
