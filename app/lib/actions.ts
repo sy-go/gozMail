@@ -4,7 +4,7 @@ import { z } from 'zod';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import postgres from 'postgres';
-import bcrypt from 'bcrypt';
+
 
 
 
@@ -58,7 +58,7 @@ export async function registerUser(prevState: State, formData: FormData) {
   try {
     await sql`
        INSERT INTO users ( email, user_password, date_created)
-       VALUES (${userName},${hashedPassword}, ${dateCreated})
+       VALUES (${userName},${userPassword}, ${dateCreated})
        `;
 
   } catch (error: any) {
