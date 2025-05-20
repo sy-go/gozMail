@@ -5,8 +5,7 @@ import Message from '@/app/ui/mail/message'
 export default function page(){
     return (
         <div className='flex'>
-            <Preview />
-            <Message />
+           compose
         </div>
     )
 }
