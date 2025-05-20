@@ -5,9 +5,6 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import postgres from 'postgres';
 
-
-
-
 const FormSchema = z.object({
   userName: z
     .string()
@@ -64,7 +61,7 @@ export async function registerUser(prevState: State, formData: FormData) {
   } catch (error: any) {
 
     return {
-      message: 'Error, failed to register user, please try again' , error
+      message: 'Error, failed to register user, please try again' , error: any
     }
   }
   revalidatePath('/register');
