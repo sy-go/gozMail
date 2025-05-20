@@ -52,7 +52,7 @@ export async function registerUser(prevState: State, formData: FormData) {
   }
 
   const { userName, userPassword } = validatedFields.data;
-  const hashedPassword = await bcrypt.hash(userPassword)
+  //const hashedPassword = await bcrypt.hash(userPassword)
   const dateCreated = new Date();
 
   try {
@@ -64,7 +64,7 @@ export async function registerUser(prevState: State, formData: FormData) {
   } catch (error: any) {
 
     return {
-      message: 'Error, failed to register user, please try again'
+      message: 'Error, failed to register user, please try again' , error
     }
   }
   revalidatePath('/register');
