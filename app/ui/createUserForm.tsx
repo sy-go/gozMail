@@ -19,8 +19,8 @@ export default function CreateUserForm() {
         required
       />
       <div id="userEmailName-error" aria-live="polite" aria-atomic="true">
-        {state.errors?.userEmailName &&
-          state.errors.userEmailName.map((error: string) => (
+        {state.errors?.userName &&
+          state.errors.userName.map((error: string) => (
             <p className="mt-2 text-sm text-red-500" key={error}>
               {error}
             </p>
