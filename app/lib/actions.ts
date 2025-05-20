@@ -5,8 +5,7 @@ import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import postgres from 'postgres';
 import bcrypt from 'bcrypt';
-import { signIn } from "next-auth/react";
-import { AuthError } from 'next-auth';
+
 
 
 const FormSchema = z.object({
