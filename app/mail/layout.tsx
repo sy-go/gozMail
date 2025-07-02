@@ -1,5 +1,6 @@
 import SideNav from '@/app/ui/sideNav'
 import Link from 'next/link';
+import  LogOut  from '@/app/ui/logOut'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -13,7 +14,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                         className='border rounded-md p-2 w-64'></input>
                 </div>
                 <div>
-                    <Link href='./' className='border rounded-md p-2'>sign off</Link>
+                    
+                    <LogOut />
                 </div>
             </div>
             <div className='flex justify-between '>
