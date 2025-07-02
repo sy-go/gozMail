@@ -1,14 +1,11 @@
 'use server';
 
 import { loginUserSchema } from '@/app/lib/definitions'
-import { drizzle } from 'drizzle-orm/postgres-js';
-import postgres from 'postgres';
 import bcrypt from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { eq } from 'drizzle-orm';
 import { db, users } from '@/app/lib/db.schema'
-import { createSession, deleteSession } from '@/app/lib/session'
-import { cookies } from 'next/headers'
+import { createSession } from '@/app/lib/session'
 
 type loginState =
   | {

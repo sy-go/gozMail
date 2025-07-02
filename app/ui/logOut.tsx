@@ -1,5 +1,5 @@
 import {  logOut } from "@/app/actions/logOut"
-import { redirect } from 'next/navigation';
+
 
 export default function LogOut() {
 

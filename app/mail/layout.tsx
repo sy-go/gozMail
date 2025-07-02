@@ -1,5 +1,4 @@
 import SideNav from '@/app/ui/sideNav'
-import Link from 'next/link';
 import  LogOut  from '@/app/ui/logOut'
 
 export default function Layout({ children }: { children: React.ReactNode }) {

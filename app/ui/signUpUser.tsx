@@ -1,9 +1,8 @@
 'use client';
 
-import { useActionState, useState } from 'react';
+import { useActionState } from 'react';
 import { registerUser } from '@/app/actions/registerUser';
-import { useRouter } from 'next/navigation';
-import { startTransition } from 'react';
+
 
 export default function SignupForm() {
   const [state, action, pending] = useActionState(registerUser, undefined)
