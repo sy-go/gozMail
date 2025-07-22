@@ -1,15 +1,13 @@
-import Preview from '@/app/ui/mail/preview';
-import Message from '@/app/ui/mail/message'
+
+
+import { SendMailForm } from "@/app/ui/mail/sendMailForm"
 
 
 export default function page() {
-    return (
-        <div className='flex'>
-            <div>Compose</div>
-            <div>            
-                <Preview />
-                <Message />
-            </div>
-        </div>
+    return (      
+           
+            <div className="h-full w-full">            
+                <SendMailForm />
+            </div>       
     )
 }

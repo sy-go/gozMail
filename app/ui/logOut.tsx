@@ -10,8 +10,8 @@ export default function LogOut() {
                         <div>
                 <button
                     type="submit"
-                    className="w-full bg-blue-300 rounded-md p-2 hover:bg-green-600 hover:text-white transition focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                >LogOff
+                    className='min-w-20 p-2 bg-blue-600 text-white rounded-xl hover:bg-blue-900 hover:font-bold' 
+                     >Logout
                 </button>
             </div>
 

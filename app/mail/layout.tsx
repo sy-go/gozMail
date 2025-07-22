@@ -7,20 +7,15 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className='flex justify-between m-2 pl-8 pr-8'>
                 <div>Logo</div>
                 <div>
-                    <input
-                        type='text'
-                        placeholder='search'
-                        className='border rounded-md p-2 w-64'></input>
+                    logged in as:
+                    <div></div>
                 </div>
-                <div>
-                    
+                <div>                    
                     <LogOut />
                 </div>
             </div>
-            <div className='flex justify-between '>
-                
-                    <SideNav />
-                
+            <div className='flex justify-between h-full'>                
+                    <SideNav />                
                 <div className="flex-grow  md:overflow-y-auto ">{children}</div>
             </div>
         </div>

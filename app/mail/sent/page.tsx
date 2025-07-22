@@ -1,15 +1,10 @@
-import Preview from '@/app/ui/mail/preview';
-import Message from '@/app/ui/mail/message'
+import MailsViewer from "@/app/ui/mailsViewer"
 
 
 export default function page() {
     return (
-        <div className='flex'>
-            <div>Sent</div>
-            <div>            
-                <Preview />
-                <Message />
-            </div>
+        <div >
+            <MailsViewer />
         </div>
     )
 }

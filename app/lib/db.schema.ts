@@ -1,7 +1,7 @@
 
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
-import { pgTable, uuid, text, timestamp, integer, boolean } from 'drizzle-orm/pg-core';
+import { pgTable, uuid, text, timestamp, integer, boolean, serial } from 'drizzle-orm/pg-core';
 
 
 export const users = pgTable('users', {
@@ -14,6 +14,25 @@ export const users = pgTable('users', {
   last_login: timestamp('last_login', { withTimezone: true }),
   role: text('role').notNull().default('user')
 });
+
+
+
+export const emails = pgTable('emails', {
+  id: serial('id').primaryKey(),
+  senderEmail: text('sender_email')
+    .notNull(),
+  recipientEmail: text('recipient_email')
+    .notNull(),
+  subject: text('subject'),
+  body: text('body'),
+  isHtml: boolean('is_html')
+    .default(false),
+  sentAt: timestamp('sent_at', { withTimezone: true })
+    .defaultNow(),
+  status: text('status')
+    .default('pending'),
+});
+
 
 const queryClient = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 export const db = drizzle(queryClient) //  to log if query was succesfull, add { logger: true } as second parameter

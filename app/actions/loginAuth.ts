@@ -61,6 +61,7 @@ export async function loginUser(state: loginState, formData: FormData) {
   }
  // // if all valid create session and redirect to 'mail'
   await createSession(user.userid)
+  console.log('user id: ' + user.userid)
 
    // const cookieStore = await cookies(); 
    // const sessionCookie = cookieStore.get('session')?.value   
@@ -68,7 +69,7 @@ export async function loginUser(state: loginState, formData: FormData) {
 
 
   // redirect user after veryfyimg credentials
-  redirect('/mail')
+  redirect('/mail/inbox')
 
 }
 

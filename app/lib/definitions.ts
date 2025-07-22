@@ -50,3 +50,7 @@ export const loginUserSchema = z.object({
     .max(30,{message:'password too long'})
     .trim()
 });
+
+export const sendEmailSchema = z.object({
+  
+})
